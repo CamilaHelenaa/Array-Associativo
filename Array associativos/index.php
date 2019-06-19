@@ -1,0 +1,28 @@
+<?php
+
+// Como se lé? 'Há um array chamado alunos com  posicões. Em cada uma das posições há um 
+// array associativo com três par-valor. As chaves do array associativo são: nome, dt_nascimento 
+// e cidade. Cada par-valor é separado por vírgula e para definir o valor de uma chave usa=se 
+// o operador de associação: =>
+
+$alunos = array( array("nome" => "Gabriela", "dt_nasc" => "03/02/2003", "cidade" => "Mococa"), //i=0
+                 array("nome" => "Agatha", "dt_nasc" => "22/10/2003", "cidade" => "Mococa"),    //i=1
+                 array("nome" => "Allysson", "dt_nasc" => "15/07/2003", "cidade" => "Mococa"),  //i=2
+                 array("nome" => "Ana Xavier", "dt_nasc" => "09/10/2002", "cidade" => "Marte"), //i=3                
+                );
+
+//Como se lê? "acessando o indice 1 do array alunos. No indice 1 há outro array, um associativo
+//onde há uma chave chamada nome e deverá mostrar Agatha".
+echo $alunos[1]['nome']. "<br/>";
+
+//Navegando pelos indices do array no navegador: ex: http://localhost:8000?i=3
+$indice = $_GET['i'];
+
+//No exemplo acima de i=3 mostraria os dados da quarta posição do array (i = 3)
+echo $alunos[ $indice ]['nome'] . "<br/>"; //Mostraria Ana Xavier
+echo $alunos[ $indice ]['dt_nasc'] . "<br/>"; //Mostraria 03/10/2002
+echo $alunos[ $indice ]['cidade'] . "<br/>"; //Mostraria Marte 
+
+//olhe com var_dump para ver como a estrutura do array se comporta:
+//var_dump($alunos);
+?>
